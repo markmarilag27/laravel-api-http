@@ -1,0 +1,22 @@
+version: '3.8'
+
+services:
+
+    # PHP interpreter
+    app:
+        build:
+            context: ./
+            dockerfile: Dockerfile
+        image: php:8.7-fpm-alpine
+        container_name: app
+        restart: unless-stopped
+        ports:
+            - 80:8000
+        volumes:
+            - ./:/var/www/html
+        networks:
+            - default
+
+networks:
+    default:
+        driver: bridge
