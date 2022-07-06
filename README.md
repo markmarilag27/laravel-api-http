@@ -22,5 +22,9 @@ $ bash ./run-start.sh
 ```
 Entering to container
 ```
-$ docker-compose exec -u 1000 app sh
+$ bash ./run-enter.sh
+```
+Stop to container
+```
+$ bash ./run-stop.sh
 ```
